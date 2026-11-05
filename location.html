@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location | Khmer Hearth</title>
+    <meta name="description" content="Find Khmer Hearth on Street 240, Phnom Penh: address, opening hours, map and parking.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Kantumruy+Pro:wght@400;600&display=swap");
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: "Kantumruy Pro", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            color: #2b1d14;
+            background-color: #fbf6ee;
+        }
+        h1, h2, h3{
+            font-family: "Fraunces", Georgia, serif;
+            margin: 0 0 8px;
+        }
+        h1{
+            font-size: 41.6px;
+        }
+        h2{
+            font-size: 28.8px;
+            color: #2f4a3a;
+        }
+        .site-header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2f4a3a;
+            padding: 16px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img{
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+        }
+        .site-header nav > ul{
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        .site-header nav a{
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .site-header nav a:hover{
+            background-color: #ffffff;
+            color: #2f4a3a;
+            border-color: #ffffff;
+        }
+        nav a[aria-current="page"]{
+            color: #ffffff;
+            border-color: #e9c46a;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .btn{
+            display: inline-block;
+            background-color: #c8553d;
+            color: #fff;
+            padding: 12.8px 28.8px;
+            border: 2px solid #c8553d;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        main section{
+            padding: 48px 5%;
+        }
+        .section-title::after{
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin-top: 6.4px;
+            background-color: #c8553d;
+        }
+        .split{
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+        .split > *{
+            flex: 1;
+        }
+        ul li::marker{
+            color: #c8553d;
+        }
+        .site-footer{
+            background-color: #2f4a3a;
+            color: #fbf6ee;
+            text-align: center;
+            padding: 32px 5%;
+        }
+        .site-footer a{
+            color: #e9c46a;
+        }
+        form{
+            max-width: 600px;
+            background-color: #fff;
+            padding: 32px;
+            border: 1px solid #e3d6c3;
+            border-radius: 10px;
+        }
+        label{
+            display: block;
+            margin: 12.8px 0 3.2px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], input[type="password"], select, textarea{
+            width: 100%;
+            padding: 9.6px;
+            border: 1px solid #b9a88f;
+            border-radius: 4px;
+            font: inherit;
+        }
+        input:focus, select:focus, textarea:focus{
+            outline: 3px solid #e9c46a;
+            border-color: #c8553d;
+        }
+        input[type="radio"], input[type="checkbox"]{
+            margin-right: 6.4px;
+        }
+        button{
+            cursor: pointer;
+            font-size: 16px;
+        }
+        fieldset{
+            border: 1px solid #d8c8b0;
+            margin-bottom: 19.2px;
+            padding: 16px;
+        }
+        legend{
+            font-weight: bold;
+            padding: 0 8px;
+            color: #2f4a3a;
+        }
+        @media (max-width:600px){
+            .split{
+                flex-direction: column;
+            }
+            .site-header{
+                flex-direction: column;
+                gap: 12.8px;
+            }
+            .site-header nav > ul{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            main section{
+                padding: 32px 19.2px;
+            }
+        }
+    
+        .page-narrow{
+            max-width: 720px;
+        }
+        .info-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 24px 0;
+        }
+        .info-box{
+            background: #fff;
+            border: 1px solid #e3d6c3;
+            border-radius: 10px;
+            padding: 16px 19.2px;
+        }
+        .info-box h3{
+            font-size: 19.2px;
+            color: #c8553d;
+        }
+        .info-box p{
+            margin: 0;
+        }
+        .map-wrap{
+            border: 1px solid #e3d6c3;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .map-wrap iframe{
+            width: 100%;
+            height: 420px;
+            border: 0;
+            display: block;
+        }
+        .alert{
+            display: none;
+            padding: 16px 19.2px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        .alert.show{
+            display: block;
+        }
+        .alert-ok{
+            background: #e6f2ea;
+            border: 1px solid #2f4a3a;
+            color: #2f4a3a;
+        }
+        .btn-outline{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        .btn-outline:hover{
+            background-color: #c8553d;
+            color: #fff;
+        }
+        @media (max-width:900px){
+            .info-grid{
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="logo" href="Home.html" style="color:#e9c46a; text-decoration:none;"><img src="images/logo.png" alt="Khmer Hearth chef logo"><span>Khmer Hearth</span></a>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="location.html" aria-current="page">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Find us</h1>
+            <p>Visit Khmer Hearth in the heart of Phnom Penh. Parking is available and our garden patio is open all day.</p>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Address</h3>
+                    <p>Khmer Hearth<br>Street 240<br>Phnom Penh, Cambodia</p>
+                </div>
+                <div class="info-box">
+                    <h3>Opening hours</h3>
+                    <p>Open daily<br>10:00 &ndash; 22:00</p>
+                </div>
+                <div class="info-box">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:thopichreaksmey@gmail.com">thopichreaksmey@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-wrap">
+                <iframe title="Map showing Khmer Hearth on Street 240, Phnom Penh"
+                        src="https://www.google.com/maps?q=Street+240,+Phnom+Penh,+Cambodia&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <p>
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Street+240,+Phnom+Penh,+Cambodia" target="_blank" rel="noopener">Get directions</a>
+                <a class="btn btn-outline" href="reservation.html">Reserve a table</a>
+            </p>
+        </section>
+
+        <section class="split">
+            <article>
+                <h2 class="section-title">Getting here</h2>
+                <ul>
+                    <li>By tuk-tuk or taxi: ask for &ldquo;Street 240&rdquo;</li>
+                    <li>Free parking for cars and motorbikes</li>
+                    <li>Wheelchair-friendly entrance</li>
+                </ul>
+            </article>
+            <aside>
+                <h2 class="section-title">Before you come</h2>
+                <ol>
+                    <li>Book a table online</li>
+                    <li>Arrive at your reserved time</li>
+                </ol>
+            </aside>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><small>&copy; 2026 Khmer Hearth &middot; Street 240, Phnom Penh &middot; <a href="mailto:thopichreaksmey@gmail.com">thopichreaksmey@gmail.com</a></small></p>
+    </footer>
+</body>
+</html>

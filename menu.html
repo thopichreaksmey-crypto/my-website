@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Khmer Hearth</title>
+    <meta name="description" content="Browse the Khmer Hearth menu: Cambodian main dishes, Western dishes, chef's specials and dessert.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Kantumruy+Pro:wght@400;600&display=swap");
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: "Kantumruy Pro", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            color: #2b1d14;
+            background-color: #fbf6ee;
+        }
+        h1, h2, h3{
+            font-family: "Fraunces", Georgia, serif;
+            margin: 0 0 8px;
+        }
+        h1{
+            font-size: 41.6px;
+        }
+        h2{
+            font-size: 28.8px;
+            color: #2f4a3a;
+        }
+        .site-header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2f4a3a;
+            padding: 16px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img{
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+        }
+        .site-header nav > ul{
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        .site-header nav a{
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .site-header nav a:hover{
+            background-color: #ffffff;
+            color: #2f4a3a;
+            border-color: #ffffff;
+        }
+        nav a[aria-current="page"]{
+            color: #ffffff;
+            border-color: #e9c46a;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .btn{
+            display: inline-block;
+            background-color: #c8553d;
+            color: #fff;
+            padding: 12.8px 28.8px;
+            border: 2px solid #c8553d;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        main section{
+            padding: 48px 5%;
+        }
+        .section-title::after{
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin-top: 6.4px;
+            background-color: #c8553d;
+        }
+        .split{
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+        .split > *{
+            flex: 1;
+        }
+        ul li::marker{
+            color: #c8553d;
+        }
+        .site-footer{
+            background-color: #2f4a3a;
+            color: #fbf6ee;
+            text-align: center;
+            padding: 32px 5%;
+        }
+        .site-footer a{
+            color: #e9c46a;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 32px;
+            background-color: #fff;
+        }
+        caption{
+            font-weight: bold;
+            text-align: left;
+            padding: 8px 0;
+            font-size: 19.2px;
+        }
+        th, td{
+            padding: 11.2px 16px;
+            border: 1px solid #e3d6c3;
+            text-align: left;
+        }
+        thead th{
+            background-color: #2f4a3a;
+            color: #fff;
+        }
+        tbody tr:hover{
+            background-color: #023925;
+            color: #fff;
+        }
+        dt{
+            font-weight: bold;
+            color: #c8553d;
+            margin-top: 16px;
+        }
+        dd{
+            margin-left: 24px;
+        }
+        .split h3{
+            font-size: 19.2px;
+            color: #c8553d;
+            margin-top: 19.2px;
+        }
+        @media (max-width:600px){
+            .split{
+                flex-direction: column;
+            }
+            .site-header{
+                flex-direction: column;
+                gap: 12.8px;
+            }
+            .site-header nav > ul{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            main section{
+                padding: 32px 19.2px;
+            }
+        }
+        @media (max-width:600px){
+            th, td{
+                padding: 8px;
+                font-size: 14.4px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="logo" href="Home.html" style="color:#e9c46a; text-decoration:none;"><img src="images/logo.png" alt="Khmer Hearth chef logo"><span>Khmer Hearth</span></a> <!-- Inline CSS -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="menu.html" aria-current="page">Menu</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Our menu</h1>
+            <p>All prices are in US dollars. Ask our team about allergens.</p>
+
+            <!-- Menu table -->
+            <table>
+                <caption>Main dishes</caption>
+                <thead>
+                    <tr><th scope="col">Dish</th><th scope="col">Description</th><th scope="col">Type</th><th scope="col">Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Fish Amok</td><td>Steamed fish curry in banana leaf</td><td>Seafood</td><td>$7.50</td></tr>
+                    <tr><td>Beef Lok Lak</td><td>Seared beef, pepper-lime dip</td><td>Meat</td><td>$8.00</td></tr>
+                    <tr><td>Nom Banh Chok</td><td>Noodles in green fish gravy</td><td>Seafood</td><td>$4.00</td></tr>
+                    <tr><td>Grilled Pork Skewers</td><td>Charcoal-grilled pork marinated in lemongrass and palm sugar</td><td>Meat</td><td>$6.00</td></tr>
+                    <tr><td>Pumpkin Amok</td><td>Vegetarian amok steamed in coconut cream and kroeung</td><td>Vegetarian</td><td>$6.50</td></tr>
+                    <tr><td>Green Mango Salad</td><td>Shredded green mango with roasted peanuts, chili and lime</td><td>Vegetarian</td><td>$3.50</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Western dishes table -->
+            <table>
+                <caption>Western dishes</caption>
+                <thead>
+                    <tr><th scope="col">Dish</th><th scope="col">Description</th><th scope="col">Type</th><th scope="col">Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Spaghetti Bolognese</td><td>Slow-cooked beef and tomato ragu over spaghetti</td><td>Meat</td><td>$6.50</td></tr>
+                    <tr><td>Grilled Chicken Steak</td><td>Pan-grilled chicken breast with mashed potato and gravy</td><td>Meat</td><td>$7.00</td></tr>
+                    <tr><td>Classic Beef Burger</td><td>Beef patty, cheddar cheese and fries on the side</td><td>Meat</td><td>$5.50</td></tr>
+                    <tr><td>Caesar Salad</td><td>Crisp romaine, parmesan, croutons and creamy Caesar dressing</td><td>Contains anchovy</td><td>$4.50</td></tr>
+                    <tr><td>Margherita Pizza</td><td>Wood-fired pizza with tomato, mozzarella and fresh basil</td><td>Vegetarian</td><td>$7.50</td></tr>
+                    <tr><td>Fish and Chips</td><td>Beer-battered fish with crispy fries and tartar sauce</td><td>Seafood</td><td>$6.80</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Soft drinks table -->
+            <table>
+                <caption>Soft drinks</caption>
+                <thead>
+                    <tr><th scope="col">Drink</th><th scope="col">Description</th><th scope="col">Type</th><th scope="col">Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Iced Coffee</td><td>Khmer-style iced coffee with sweet condensed milk</td><td>Coffee</td><td>$2.00</td></tr>
+                    <tr><td>Fresh Coconut</td><td>Chilled young coconut served in the shell</td><td>Fresh</td><td>$1.50</td></tr>
+                    <tr><td>Sugarcane Juice</td><td>Freshly pressed sugarcane with a squeeze of lime</td><td>Fresh</td><td>$1.50</td></tr>
+                    <tr><td>Mango Smoothie</td><td>Ripe mango blended with ice and a little milk</td><td>Smoothie</td><td>$2.50</td></tr>
+                    <tr><td>Lemon Iced Tea</td><td>Black tea with fresh lemon and mint over ice</td><td>Tea</td><td>$1.80</td></tr>
+                    <tr><td>Khmer Milk Tea</td><td>Creamy orange tea poured over crushed ice</td><td>Tea</td><td>$2.20</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Beer, wine and cocktails table -->
+            <table>
+                <caption>Beer, wine and cocktails</caption>
+                <thead>
+                    <tr><th scope="col">Drink</th><th scope="col">Description</th><th scope="col">Type</th><th scope="col">Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Angkor Beer</td><td>Local Cambodian lager, served ice cold</td><td>Beer</td><td>$2.00</td></tr>
+                    <tr><td>Hanuman Beer</td><td>Cambodian premium lager, served ice cold</td><td>Beer</td><td>$1.50</td></tr>
+                    <tr><td>House Red Wine</td><td>A smooth house-pour red, by the glass</td><td>Wine</td><td>$4.50</td></tr>
+                    <tr><td>House White Wine</td><td>Crisp and light, by the glass</td><td>Wine</td><td>$4.50</td></tr>
+                    <tr><td>Mojito</td><td>White rum, lime, mint and soda over ice</td><td>Cocktail</td><td>$4.00</td></tr>
+                    <tr><td>Khmer Rum Cocktail</td><td>Local rum mixed with passion fruit and lime</td><td>Cocktail</td><td>$4.50</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Dessert table -->
+            <table>
+                <caption>Dessert</caption>
+                <thead>
+                    <tr><th scope="col">Dish</th><th scope="col">Description</th><th scope="col">Type</th><th scope="col">Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Sticky rice with mango</td><td>Sweet sticky rice with ripe mango and coconut cream</td><td>Vegetarian</td><td>$3.00</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <!-- Description list -->
+            <h2 class="section-title">Chef's specials</h2>
+            <dl>
+                <dt>Kampot Pepper Crab</dt>
+                <dd>Fresh crab fried with green peppercorns. Friday and Saturday only. <strong class="price">Market price</strong></dd>
+                <dt>Sour Soup Samlor Machu</dt>
+                <dd>Tamarind and lemongrass broth with river fish. <strong class="price">Ask our team for today's price</strong></dd>
+            </dl>
+            <p><a class="btn" href="reservation.html">Reserve a table</a></p>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><small>&copy; 2026 Khmer Hearth &middot; Street 240, Phnom Penh &middot; <a href="mailto:thopichreaksmey@gmail.com">thopichreaksmey@gmail.com</a></small></p>
+    </footer>
+</body>
+</html>

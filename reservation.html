@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | Khmer Hearth</title>
+    <meta name="description" content="Reserve a table at Khmer Hearth in Phnom Penh. We confirm by phone or email within one hour.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Kantumruy+Pro:wght@400;600&display=swap");
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: "Kantumruy Pro", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            color: #2b1d14;
+            background-color: #fbf6ee;
+        }
+        h1, h2, h3{
+            font-family: "Fraunces", Georgia, serif;
+            margin: 0 0 8px;
+        }
+        h1{
+            font-size: 41.6px;
+        }
+        h2{
+            font-size: 28.8px;
+            color: #2f4a3a;
+        }
+        .site-header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2f4a3a;
+            padding: 16px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img{
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+        }
+        .site-header nav > ul{
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        .site-header nav a{
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .site-header nav a:hover{
+            background-color: #ffffff;
+            color: #2f4a3a;
+            border-color: #ffffff;
+        }
+        nav a[aria-current="page"]{
+            color: #ffffff;
+            border-color: #e9c46a;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .btn{
+            display: inline-block;
+            background-color: #c8553d;
+            color: #fff;
+            padding: 12.8px 28.8px;
+            border: 2px solid #c8553d;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        main section{
+            padding: 48px 5%;
+        }
+        .section-title::after{
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin-top: 6.4px;
+            background-color: #c8553d;
+        }
+        .split{
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+        .split > *{
+            flex: 1;
+        }
+        ul li::marker{
+            color: #c8553d;
+        }
+        .site-footer{
+            background-color: #2f4a3a;
+            color: #fbf6ee;
+            text-align: center;
+            padding: 32px 5%;
+        }
+        .site-footer a{
+            color: #e9c46a;
+        }
+        form{
+            max-width: 600px;
+            background-color: #fff;
+            padding: 32px;
+            border: 1px solid #e3d6c3;
+            border-radius: 10px;
+        }
+        label{
+            display: block;
+            margin: 12.8px 0 3.2px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], input[type="password"], select, textarea{
+            width: 100%;
+            padding: 9.6px;
+            border: 1px solid #b9a88f;
+            border-radius: 4px;
+            font: inherit;
+        }
+        input:focus, select:focus, textarea:focus{
+            outline: 3px solid #e9c46a;
+            border-color: #c8553d;
+        }
+        input[type="radio"], input[type="checkbox"]{
+            margin-right: 6.4px;
+        }
+        button{
+            cursor: pointer;
+            font-size: 16px;
+        }
+        fieldset{
+            border: 1px solid #d8c8b0;
+            margin-bottom: 19.2px;
+            padding: 16px;
+        }
+        legend{
+            font-weight: bold;
+            padding: 0 8px;
+            color: #2f4a3a;
+        }
+        @media (max-width:600px){
+            .split{
+                flex-direction: column;
+            }
+            .site-header{
+                flex-direction: column;
+                gap: 12.8px;
+            }
+            .site-header nav > ul{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            main section{
+                padding: 32px 19.2px;
+            }
+        }
+
+        .btn-outline{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        .btn-outline:hover{
+            background-color: #c8553d;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="logo" href="Home.html" style="color:#e9c46a; text-decoration:none;"><img src="images/logo.png" alt="Khmer Hearth chef logo"><span>Khmer Hearth</span></a> <!-- Inline CSS -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html" aria-current="page">Reservation</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Reserve a table</h1>
+            <p>Fill in the form and we will confirm by phone or email within one hour.</p>
+
+            <!-- Reservation form -->
+            <form action="reservation-sent.html" method="get">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Sok Dara" required autocomplete="name">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+855 12 345 678" required autocomplete="tel">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time (10:00 &ndash; 21:00)</label>
+                <input type="time" id="time" name="time" min="10:00" max="21:00" required>
+                <label for="guests">Number of guests</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" value="2" required>
+                <label for="notes">Special requests (allergies, high chair, birthday...)</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+                <p><button class="btn" type="submit">Send reservation</button></p>
+            </form>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><small>&copy; 2026 Khmer Hearth &middot; Street 240, Phnom Penh &middot; <a href="mailto:thopichreaksmey@gmail.com">thopichreaksmey@gmail.com</a></small></p>
+    </footer>
+</body>
+</html>

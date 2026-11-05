@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation sent | Khmer Hearth</title>
+    <meta name="description" content="Your Khmer Hearth reservation request has been received.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Kantumruy+Pro:wght@400;600&display=swap");
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: "Kantumruy Pro", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            color: #2b1d14;
+            background-color: #fbf6ee;
+        }
+        h1, h2, h3{
+            font-family: "Fraunces", Georgia, serif;
+            margin: 0 0 8px;
+        }
+        h1{
+            font-size: 41.6px;
+        }
+        .site-header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2f4a3a;
+            padding: 16px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img{
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+        }
+        .site-header nav > ul{
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        .site-header nav a{
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .site-header nav a:hover{
+            background-color: #ffffff;
+            color: #2f4a3a;
+            border-color: #ffffff;
+        }
+        nav a[aria-current="page"]{
+            color: #ffffff;
+            border-color: #e9c46a;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .btn{
+            display: inline-block;
+            background-color: #c8553d;
+            color: #fff;
+            padding: 12.8px 28.8px;
+            border: 2px solid #c8553d;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        .btn-outline{
+            background-color: transparent;
+            color: #2f4a3a;
+            border-color: #2f4a3a;
+        }
+        .btn-outline:hover{
+            background-color: #2f4a3a;
+            color: #fff;
+        }
+        .site-footer{
+            background-color: #2f4a3a;
+            color: #fbf6ee;
+            text-align: center;
+            padding: 32px 5%;
+        }
+        .site-footer a{
+            color: #e9c46a;
+        }
+        .confirm-page{
+            min-height: 70vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 48px 5%;
+        }
+        .confirm-card{
+            width: 100%;
+            max-width: 480px;
+            background-color: #fff;
+            border: 1px solid #e3d6c3;
+            border-radius: 10px;
+            padding: 40px 32px;
+            box-shadow: 0 10px 25px rgba(43,29,20,0.12);
+        }
+        .confirm-icon{
+            width: 64px;
+            height: 64px;
+            line-height: 64px;
+            border-radius: 50%;
+            background-color: #2f4a3a;
+            color: #e9c46a;
+            font-size: 32px;
+            margin: 0 auto 16px;
+        }
+        .confirm-actions{
+            margin-top: 24px;
+            display: flex;
+            gap: 12.8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width:600px){
+            .site-header{
+                flex-direction: column;
+                gap: 12.8px;
+            }
+            .site-header nav > ul{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            .confirm-card{
+                padding: 32px 19.2px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="logo" href="Home.html" style="color:#e9c46a; text-decoration:none;"><img src="images/logo.png" alt="Khmer Hearth chef logo"><span>Khmer Hearth</span></a> 
+    </header>
+
+    <main class="confirm-page">
+        <!-- Confirmation card -->
+        <section class="confirm-card">
+            <div class="confirm-icon">&#10003;</div>
+            <h1>Reservation sent</h1>
+            <p>Thank you! We received your request and will confirm by phone or email within one hour.</p>
+            <div class="confirm-actions">
+                <a class="btn" href="Home.html">Back to home</a>
+                <a class="btn btn-outline" href="menu.html">View menu</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><small>&copy; 2026 Khmer Hearth &middot; Street 240, Phnom Penh &middot; <a href="mailto:thopichreaksmey@gmail.com">thopichreaksmey@gmail.com</a></small></p>
+    </footer>
+</body>
+</html>

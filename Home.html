@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Khmer Hearth</title>
+    <meta name="description" content="Khmer Hearth serves Cambodian family recipes cooked over fire in the heart of Phnom Penh. Book a table online.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        html{
+            scroll-padding-top: 90px;
+            scroll-behavior: smooth;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Kantumruy+Pro:wght@400;600&display=swap");
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: "Kantumruy Pro", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            color: #2b1d14;
+            background-color: #fbf6ee;
+        }
+        h1, h2, h3{
+            font-family: "Fraunces", Georgia, serif;
+            margin: 0 0 8px;
+        }
+        h1{
+            font-size: 41.6px;
+        }
+        h2{
+            font-size: 28.8px;
+            color: #2f4a3a;
+        }
+        .site-header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2f4a3a;
+            padding: 16px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img{
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+        }
+        .site-header nav > ul{
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        .site-header nav a{
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .site-header nav a:hover{
+            background-color: #ffffff;
+            color: #2f4a3a;
+            border-color: #ffffff;
+        }
+        nav a[aria-current="page"]{
+            color: #ffffff;
+            border-color: #e9c46a;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .btn{
+            display: inline-block;
+            background-color: #c8553d;
+            color: #fff;
+            padding: 12.8px 28.8px;
+            border: 2px solid #c8553d;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: transparent;
+            color: #c8553d;
+        }
+        main section{
+            padding: 48px 5%;
+        }
+        .section-title::after{
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin-top: 6.4px;
+            background-color: #c8553d;
+        }
+        .split{
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+        .split > *{
+            flex: 1;
+        }
+        ul li::marker{
+            color: #c8553d;
+        }
+        .site-footer{
+            background-color: #2f4a3a;
+            color: #fbf6ee;
+            text-align: center;
+            padding: 32px 5%;
+        }
+        .site-footer a{
+            color: #e9c46a;
+        }
+        .hero{
+            min-height: 70vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 48px 5%;
+            color: #fff;
+            background: linear-gradient(rgba(20,14,10,0.45), rgba(20,14,10,0.55)), url("images/image copy 31.webp") center/cover no-repeat;
+        }   
+        .card-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .card{
+            background-color: #fff;
+            border: 1px solid #e3d6c3;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover{
+            transform: translateY(-6px);
+        }
+        .card img{
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .card-body{
+            padding: 16px 19.2px;
+        }
+        .price{
+            color: #c8553d;
+            font-weight: bold;
+        }
+        .highlight{
+            background-color: #e9c46a;
+            padding: 0 4.8px;
+        }
+        @media (max-width:600px){
+            .split{
+                flex-direction: column;
+            }
+            .site-header{
+                flex-direction: column;
+                gap: 12.8px;
+            }
+            .site-header nav > ul{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            main section{
+                padding: 32px 19.2px;
+            }
+        }
+        @media (max-width:900px){
+            .card-grid{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #hero-title{
+                font-size: 35.2px;
+            }
+        }
+        @media (max-width:600px){
+            .card-grid{
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="logo" href="Home.html" style="color:#e9c46a; text-decoration:none;"><img src="images/logo.png" alt="Khmer Hearth chef logo"><span>Khmer Hearth</span></a> <!-- Inline CSS -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="Home.html" aria-current="page">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero section -->
+        <section class="hero">
+            <div>
+                <h1 id="hero-title">Cambodian food, cooked over fire</h1>
+                <p>Family recipes from Battambang and Kampot, served in the heart of Phnom Penh.</p>
+            </div>
+        </section>
+
+        <!-- Featured dishes -->
+        <section>
+            <h2 class="section-title">Guest favourites</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="images/image copy.webp" alt="Bowl of fish amok in banana leaf">
+                    <div class="card-body">
+                        <h3>Fish Amok</h3>
+                        <p>Steamed fish curry with kroeung paste and coconut cream.</p>
+                        <p class="price">$7.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 7.webp" alt="Plate of beef lok lak with lime pepper dip">
+                    <div class="card-body">
+                        <h3>Beef Lok Lak</h3>
+                        <p>Wok-seared beef with <strong>Kampot pepper</strong> and lime dip.</p>
+                        <p class="price">$8.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 2.webp" alt="Bowl of Khmer noodle soup">
+                    <div class="card-body">
+                        <h3>Nom Banh Chok</h3>
+                        <p>Rice noodles in green fish gravy with fresh herbs.</p>
+                        <p class="price">$4.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 6.webp" alt="Skewers grilling over charcoal">
+                    <div class="card-body">
+                        <h3>Grilled Pork Skewers</h3>
+                        <p>Charcoal-grilled pork marinated in lemongrass and palm sugar.</p>
+                        <p class="price">$6.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 4.webp" alt="Bowl of pumpkin curry">
+                    <div class="card-body">
+                        <h3>Pumpkin Amok</h3>
+                        <p>A vegetarian take on amok, steamed in coconut cream and kroeung.</p>
+                        <p class="price">$6.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 5.webp" alt="Plate of mango salad">
+                    <div class="card-body">
+                        <h3>Green Mango Salad</h3>
+                        <p>Shredded green mango with roasted peanuts, chili and lime.</p>
+                        <p class="price">$3.50</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Western dishes -->
+        <section>
+            <h2 class="section-title">Western dishes</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="images/image copy 8.webp" alt="Plate of spaghetti">
+                    <div class="card-body">
+                        <h3>Spaghetti Bolognese</h3>
+                        <p>Slow-cooked beef and tomato ragu over spaghetti.</p>
+                        <p class="price">$6.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 9.webp" alt="Grilled chicken steak">
+                    <div class="card-body">
+                        <h3>Grilled Chicken Steak</h3>
+                        <p>Pan-grilled chicken breast with mashed potato and gravy.</p>
+                        <p class="price">$7.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/images.3.webp" alt="Classic beef burger">
+                    <div class="card-body">
+                        <h3>Classic Beef Burger</h3>
+                        <p>Beef patty, cheddar cheese and fries on the side.</p>
+                        <p class="price">$5.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 10.webp" alt="Caesar salad">
+                    <div class="card-body">
+                        <h3>Caesar Salad</h3>
+                        <p>Crisp romaine, parmesan, croutons and creamy Caesar dressing.</p>
+                        <p class="price">$4.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 11.webp" alt="Margherita pizza">
+                    <div class="card-body">
+                        <h3>Margherita Pizza</h3>
+                        <p>Wood-fired pizza with tomato, mozzarella and fresh basil.</p>
+                        <p class="price">$7.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 12.webp" alt="Fish and chips">
+                    <div class="card-body">
+                        <h3>Fish and Chips</h3>
+                        <p>Beer-battered fish with crispy fries and tartar sauce.</p>
+                        <p class="price">$6.80</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Drinks -->
+        <section id="drinks">
+            <h2 class="section-title">Drinks</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="images/image copy 23.webp" alt="Iced Coffee">
+                    <div class="card-body">
+                        <h3>Iced Coffee</h3>
+                        <p>Khmer-style iced coffee with sweet condensed milk.</p>
+                        <p class="price">$2.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 24.webp" alt="Fresh Coconut">
+                    <div class="card-body">
+                        <h3>Fresh Coconut</h3>
+                        <p>Chilled young coconut served in the shell.</p>
+                        <p class="price">$1.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 22.webp" alt="Sugarcane Juice">
+                    <div class="card-body">
+                        <h3>Sugarcane Juice</h3>
+                        <p>Freshly pressed sugarcane with a squeeze of lime.</p>
+                        <p class="price">$1.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 21.webp" alt="Mango Smoothie">
+                    <div class="card-body">
+                        <h3>Mango Smoothie</h3>
+                        <p>Ripe mango blended with ice and a little milk.</p>
+                        <p class="price">$2.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 19.webp" alt="Lemon Iced Tea">
+                    <div class="card-body">
+                        <h3>Lemon Iced Tea</h3>
+                        <p>Black tea with fresh lemon and mint over ice.</p>
+                        <p class="price">$1.80</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 20.webp" alt="Khmer Milk Tea">
+                    <div class="card-body">
+                        <h3>Khmer Milk Tea</h3>
+                        <p>Creamy orange tea poured over crushed ice.</p>
+                        <p class="price">$2.20</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Beer, wine and cocktails</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="images/image copy 25.webp" alt="Angkor Beer">
+                    <div class="card-body">
+                        <h3>Angkor Beer</h3>
+                        <p>Local Cambodian lager, served ice cold.</p>
+                        <p class="price">$2.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 26.webp" alt="House Red Wine">
+                    <div class="card-body">
+                        <h3>House Red Wine</h3>
+                        <p>A smooth house-pour red, by the glass.</p>
+                        <p class="price">$4.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 27.webp" alt="House White Wine">
+                    <div class="card-body">
+                        <h3>House White Wine</h3>
+                        <p>Crisp and light, by the glass.</p>
+                        <p class="price">$4.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 28.webp" alt="Mojito">
+                    <div class="card-body">
+                        <h3>Mojito</h3>
+                        <p>White rum, lime, mint and soda over ice.</p>
+                        <p class="price">$4.00</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 29.webp" alt="Khmer Rum Cocktail">
+                    <div class="card-body">
+                        <h3>Khmer Rum Cocktail</h3>
+                        <p>Local rum mixed with passion fruit and lime.</p>
+                        <p class="price">$4.50</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/image copy 30.webp" alt="Bottle of Hanuman beer next to a full glass">
+                    <div class="card-body">
+                        <h3>Hanuman Beer</h3>
+                        <p>Cambodian premium lager, served ice cold.</p>
+                        <p class="price">$1.50</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="text-align:center; padding-top:0;">
+            <a class="btn" href="menu.html">See the full menu</a>
+        </section>
+
+        <!-- About + opening hours -->
+        <section class="split">
+            <article>
+                <h2 class="section-title">Our story</h2>
+                <p>Khmer Hearth opened with one wood stove and one idea: cook like grandmother did. We buy vegetables from local farms and grind our spice pastes by hand every morning.</p>
+                <h3>Why guests return</h3>
+                <ul>
+                    <li>Fresh ingredients from Cambodian farms</li>
+                    <li>Vegetarian and halal options</li>
+                    <li>Free Wi-Fi and a quiet garden patio</li>
+                </ul>
+            </article>
+            <aside>
+                <h2 class="section-title">How to order</h2>
+                <ol>
+                    <li>Browse the menu</li>
+                    <li>Book a table online</li>
+                    <li>Arrive and enjoy</li>
+                </ol>
+                <p>Open daily, 10:00 &ndash; 22:00.</p>
+            </aside>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p><small>&copy; 2026 Khmer Hearth &middot; Street 240, Phnom Penh &middot; <a href="mailto:thopichreaksmey@gmail.com">thopichreaksmey@gmail.com</a></small></p>
+    </footer>
+</body>
+</html>
